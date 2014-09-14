@@ -1,6 +1,6 @@
 <?
 function correctNum ($arg) {
-    return (float) number_format ($arg, 4); // при помощи (float) убираем нули в дробной части (2.500=2.5)
+    return (float) number_format ($arg, 4); // using (float) for deletion zeros (2.500=2.5)
 }
 
 function countUpHords (array $param) {
@@ -8,7 +8,7 @@ function countUpHords (array $param) {
         $$key = $value;
     unset($param);
     
-    if (empty($end)){
+    if (empty($end)){ //$end = 0 => A ; $end = 1 => B
         $forDiff = 1;
         $x = $b;
     }
@@ -18,20 +18,20 @@ function countUpHords (array $param) {
         $a=$b;
     }
     
-    $f_a = ($coef1*pow($a, 3)) + ($coef2*pow($a, 2)) + ($coef3*$a) + $coef4; //считаем f(a) or f(b)
+    $f_a = ($coef1*pow($a, 3)) + ($coef2*pow($a, 2)) + ($coef3*$a) + $coef4; //count f(a) or f(b)
     
     $n = 0;
-    $tabCalc="<tr><th></th><th>$coef1</th><th>$coef2</th><th>$coef3</th><th>$coef4</th></tr>"; //Таблица с расчётами
-    $listOfH = ''; //перемен., в которую записывается список расчётов h
+    $tabCalc="<tr><th></th><th>$coef1</th><th>$coef2</th><th>$coef3</th><th>$coef4</th></tr>"; //table for calcs
+    $listOfH = ''; //this var have list of calcs h
     
     do{
         $param=['id' => $n, 'x[n]' => $x];
-        $calc[0]=correctNum ($coef1*$x);
-        $calc[1]=correctNum ($calc[0]+$coef2);
-        $calc[2]=correctNum ($calc[1]*$x);
-        $calc[3]=correctNum ($calc[2]+$coef3);
-        $calc[4]=correctNum ($calc[3]*$x);
-        $calc[5]=correctNum ($calc[4]+$coef4);
+        $calc[0]=correctNum ($coef1*$x);       //2 row, 3 col
+        $calc[1]=correctNum ($calc[0]+$coef2); //3 row, 3 col
+        $calc[2]=correctNum ($calc[1]*$x);     //2 row, 4 col
+        $calc[3]=correctNum ($calc[2]+$coef3); //3 row, 4 col
+        $calc[4]=correctNum ($calc[3]*$x);     //2 row, 5 col
+        $calc[5]=correctNum ($calc[4]+$coef4); //3 row, 5 col
              
         $tabCalc.= "<tr style='border-top: 2px solid black;'><td rowspan='2'>x[$n] = $x</td><td>:</td><td>$calc[0]</td><td>$calc[2]</td><td>$calc[4]</td></tr>
                     <tr><td>$coef1</td><td>$calc[1]</td><td>$calc[3]</td><td>$calc[5]</td></tr>";
@@ -40,7 +40,7 @@ function countUpHords (array $param) {
         $param['a/b']=correctNum (($x-$a)*$forDiff);
         $param['f(a/b)']=correctNum (($param['f(x[n])']-$f_a)*$forDiff);
         
-        if (empty($param['f(a/b)'])) //экстренный выход (деление на ноль)
+        if (empty($param['f(a/b)'])) //early exit (division by zero)
             return false;
             
         $param['h']=correctNum($param['f(x[n])']*$param['a/b']/$param['f(a/b)']);
@@ -49,7 +49,7 @@ function countUpHords (array $param) {
         $params[$n]=$param;
         $x=correctNum ($x-$param['h']);
         $n++;
-    }while (!empty($param['h']) && $n<56); //если замыкается, 56 последняя итерация
+    }while (!empty($param['h']) && $n<56); //if there is closing, 56 step will be last
     
     $lastX=$params[count($params)-1]['x[n]'];
     $params[count($params)-1]['x[n]'] = "<span style='color: green;'>$lastX</span>";
@@ -61,25 +61,26 @@ function countUpKos (array $param) {
     
     foreach ($param as $key => $value)
         $$key = $value;
-        
-    /*Коэф. f'()*/
+    unset($param);
+    
+    /*count coefs f'()*/
     $coef1_L=$coef1*3;
     $coef2_L=$coef2*2;
     $coef3_L=$coef3;
-    /*//Коэф. f'()*/
+    /*//count coefs f'()*/
     
     $n=0;
-    $tabCalc="<tr><th></th><th>$coef1</th><th>$coef2</th><th>$coef3</th><th>$coef4</th></tr>"; //Таблица с расчётами f(x)
-    $tabCalc_L="<tr><th></th><th>$coef1_L</th><th>$coef2_L</th><th>$coef3_L</th></tr>"; //Таблица с расчётами f'(x)
+    $tabCalc="<tr><th></th><th>$coef1</th><th>$coef2</th><th>$coef3</th><th>$coef4</th></tr>"; // table for calcs f(x)
+    $tabCalc_L="<tr><th></th><th>$coef1_L</th><th>$coef2_L</th><th>$coef3_L</th></tr>";        // table for calcs f'(x)
     
     do{
         $param=array('id' => $n, 'x[n]' => $x);
-        $calc[0]=correctNum ($coef1*$x);
-        $calc[1]=correctNum ($calc[0]+$coef2);
-        $calc[2]=correctNum ($calc[1]*$x);
-        $calc[3]=correctNum ($calc[2]+$coef3);
-        $calc[4]=correctNum ($calc[3]*$x);
-        $calc[5]=correctNum ($calc[4]+$coef4);
+        $calc[0]=correctNum ($coef1*$x);       //2 row, 3 col
+        $calc[1]=correctNum ($calc[0]+$coef2); //3 row, 3 col
+        $calc[2]=correctNum ($calc[1]*$x);     //2 row, 4 col
+        $calc[3]=correctNum ($calc[2]+$coef3); //3 row, 4 col
+        $calc[4]=correctNum ($calc[3]*$x);     //2 row, 5 col
+        $calc[5]=correctNum ($calc[4]+$coef4); //3 row, 5 col
         
         $calc_L[0]=correctNum ($coef1_L*$x);
         $calc_L[1]=correctNum ($calc_L[0]+$coef2_L);
@@ -95,14 +96,14 @@ function countUpKos (array $param) {
         $param['f(x[n])']=$calc[5];
         $param['f\'(x[n])']=$calc_L[3];
         
-        if (empty($param['f\'(x[n])'])) //экстренный выход (деление на ноль)
+        if (empty($param['f\'(x[n])'])) //early exit (division by zero)
             return false;
             
         $param['h']=correctNum($param['f(x[n])']/$param['f\'(x[n])']);
         
         $params[$n]=$param;
         
-        if (empty($param['h'])) { //сохраняем коэфициенты квадратного уравнения для подсчёта двух других корней
+        if (empty($param['h'])) { // keeping coefs square equation for counting two other solutions
             $resX[0]=$x;
             $coef2=$calc[1];
             $coef3=$calc[3]+($calc[5]*(-1));
@@ -110,7 +111,7 @@ function countUpKos (array $param) {
         
         $x=correctNum ($x-$param['h']);
         $n++;
-    }while (!empty($param['h']) && $n<56); //если замыкается, 56 последняя итерация
+    }while (!empty($param['h']) && $n<56); //if there is closing, 56 step will be last 
     
     $lastX=$params[count($params)-1]['x[n]'];
     $params[count($params)-1]['x[n]'] = "<span style='color: green;'>$lastX</span>";

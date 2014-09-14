@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             break 1;
         }
     }
-    if (empty($listForSend['coef1'])) $check=false;
+    if (empty($listForSend['coef1'])) $check=false;             //verification of existing the first coef of square equation
     $result= ($check) ? countUpKos($listForSend) : false;
     if (!empty($result)) {
         list($params, $tabCalc, $tabCalc_L, $calcSquare)=$result;

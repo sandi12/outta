@@ -4,7 +4,7 @@
     $way='index.inc.php';
     if (!empty($_GET['id'])) {
         $id = strtolower(strip_tags(trim($_GET['id'])));
-        // Инициализация заголовков страницы
+        // initalization page's headers
         switch($id){
         	case 'hords': 
         		$title = 'Хорды';
