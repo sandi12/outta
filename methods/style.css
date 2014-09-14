@@ -1,0 +1,99 @@
+#main {
+    width: 1024px;
+    margin: 0 auto;
+    outline: 0px solid red;
+    font-family: Tahoma, sans-serif;
+    background-color: white;
+    position: relative;
+}
+
+#header1{
+    margin-top: 95px;
+    padding-bottom: 5px;
+    border-bottom: 1px double black;
+}
+
+/*Таблица(общее)*/
+table{
+    border-collapse: collapse;
+    border:2px solid black;
+}
+
+th{
+    text-align: center;
+    border:2px solid black;
+}
+td{
+    text-align: center;
+    border:1px solid black;
+}
+/*//Таблица(общее)*/
+
+/*Расчёты*/
+#calc{
+    border-bottom:1px solid black;
+    padding-bottom: 10px;
+}
+#calcH {
+    float: left;
+    display: inline-block;
+}
+#calcTable {
+    display: inline-block;
+    margin-left: 40px;
+}
+#mainTable {
+    float: right;
+}
+/*//Расчёты*/
+
+/*Форма*/
+#form {
+    display: inline-block;
+    margin-top: 100px;
+    margin-left: 350px;
+}
+
+.but{
+    margin-top: 20px;
+}
+#form input{
+    margin-bottom: 20px;
+}
+#form input:not(.radio):not(.interval) {
+    width: 60px;
+    border: 1px solid #717171;
+}
+.interval {
+    width: 35px;
+    border: none;
+    border-bottom: 1px solid #717171;
+    text-align: center;
+    
+}
+/*//Форма*/
+
+
+/*Навигационное меню*/
+nav {
+    display: inline-block;
+    margin-left: 40px;
+}
+nav ul {
+	list-style: none;
+	padding-left: 0;
+}
+nav li {
+	font-size: 24px;
+	margin-right: 40px;
+    float: left;
+}
+nav a:link, #nav a:visited {
+	text-decoration: none;
+	color: #2A4F6F;
+	background-color: transparent;
+}
+nav a:hover {
+	color: #778899;
+}
+/*//Навигационное меню*/
