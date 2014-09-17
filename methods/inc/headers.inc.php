@@ -1,7 +1,7 @@
-<?
+<?php
     $title = 'Главная';
     $header = 'Welcome';
-    $way='index.inc.php';
+    $way = 'index.inc.php';
     if (!empty($_GET['id'])) {
         $id = strtolower(strip_tags(trim($_GET['id'])));
         // initalization page's headers
@@ -9,13 +9,12 @@
         	case 'hords': 
         		$title = 'Хорды';
         		$header = 'Метод хорд';
-                $way='hords.inc.php';
+                $way = 'hords.inc.php';
         		break;
         	case 'kos': 
         		$title = 'Косатин';
         		$header = 'Метод Косатина';
-                $way='kos.inc.php';
+                $way = 'kos.inc.php';
         		break;
         }
     }
-?>

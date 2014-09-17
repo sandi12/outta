@@ -1,6 +1,6 @@
-<?
+<?php
 if ($_SERVER['REQUEST_METHOD']=='POST') {
-    include 'core/core.php';
+    include_once 'core/core.php';
     
     $listForSend=$_POST;
     $check=true;
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         <?= $calcSquare ?>
     </div>
 </section>
-<?
+<?php
     }
     else echo '<span style="color: red;"><br />О нет, что-то пошло не так<br />Деление на ноль или замыкание<br />Проверьте введённые данные<br />99.9999999% вероятность, что ошибся именно ты<br />Обрати внимание на минусы (должен быть самый маленький)</span><hr />';
 }
