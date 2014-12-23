@@ -1,6 +1,6 @@
-<?php
+<?
 function correctNum ($arg) {
-    return (float) number_format ($arg, 4); // usong (float) for deletion zeros (2.500=2.5)
+    return (float) number_format ($arg, 4); // using (float) for deletion zeros (2.500=2.5)
 }
 
 function countUpHords (array $param) {
@@ -132,3 +132,4 @@ function countUpKos (array $param) {
     
     return [$params, $tabCalc, $tabCalc_L, $calcSquare];
 }
+?>

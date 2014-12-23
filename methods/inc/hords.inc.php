@@ -1,9 +1,9 @@
-<?php
+<?
 if ($_SERVER['REQUEST_METHOD']=='POST') {
-    include_once 'core/core.php';
+    include 'core/core.php';
     
-    $listForSend = $_POST;
-    $check = true;
+    $listForSend=$_POST;
+    $check=true;
     foreach ($listForSend as &$item1) {
         $lastItem1=$item1;
         $item1 = (float) $item1;
@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     $result= ($check) ? countUpHords($listForSend) : false;
     if (!empty($result)) {
         list($params, $tabCalc, $listOfH)=$result;
+    
 ?>
 <section id="calc">
     <div id="calcH"><!--Вывод рассчётов h-->
@@ -39,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         </table>
     </div>
 </section>
-<?php
+<?
     }
     else echo '<span style="color: red;"><br />О нет, что-то пошло не так<br />Деление на ноль или замыкание<br />Проверьте введённые данные<br />99.9999999% вероятность, что ошибся именно ты<br />Обрати внимание на минусы (должен быть самый маленький)</span><hr />';
 }

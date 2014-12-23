@@ -1,14 +1,10 @@
-<?php
+<? 
 header('Content-Type: text/html; charset=utf-8');
-header('Cashe-Control: max-age=36000');
-
-define('MAIN_WAY', 'http://outta123.hol.es/methods/');
-
-include_once 'inc/headers.inc.php';
-include_once 'inc/writeToAdmin.php';
+header('Cashe-Control: max-age=36000'); 
+include 'inc/headers.inc.php';
 /*http://outta123.hol.es/methods/*/
 /*http://php.local/methods/*/
-
+define('MAIN_WAY', 'http://outta123.hol.es/methods/');
 ?>
 
 <!DOCTYPE HTML>
@@ -27,7 +23,7 @@ include_once 'inc/writeToAdmin.php';
             </ul>
         </nav>
         <h1 id='header1'><?= $header ?></h1>
-        <?php include "inc/$way"; ?>
+        <? include "inc/$way"; ?>
     </section>
 </body>
 </html>
