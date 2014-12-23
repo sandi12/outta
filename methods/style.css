@@ -22,12 +22,18 @@ table{
 th{
     text-align: center;
     border:2px solid black;
+<<<<<<< HEAD
     padding: 4px 10px;
+=======
+>>>>>>> 9a860c582f694fc1ab8780d33003e49fd1514afc
 }
 td{
     text-align: center;
     border:1px solid black;
+<<<<<<< HEAD
     padding: 4px 10px;
+=======
+>>>>>>> 9a860c582f694fc1ab8780d33003e49fd1514afc
 }
 /*//Таблица(общее)*/
 
@@ -45,6 +51,7 @@ td{
     margin-left: 40px;
 }
 #mainTable {
+<<<<<<< HEAD
     margin: 40px 0 0 300px;
 }
 .index {
@@ -83,6 +90,9 @@ td{
 }
 .colorBlue {
     color: blue;
+=======
+    float: right;
+>>>>>>> 9a860c582f694fc1ab8780d33003e49fd1514afc
 }
 /*//Расчёты*/
 
@@ -135,6 +145,7 @@ nav a:link, #nav a:visited {
 nav a:hover {
 	color: #778899;
 }
+<<<<<<< HEAD
 
 #kombo {
     margin-top: -1px;
@@ -142,4 +153,6 @@ nav a:hover {
 #kombo sup {
     font-size: 12px;
 }
+=======
+>>>>>>> 9a860c582f694fc1ab8780d33003e49fd1514afc
 /*//Навигационное меню*/

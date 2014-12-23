@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 <?php
 if ($_SERVER['REQUEST_METHOD']=='POST') {
     include_once 'core/general_core.php';
     include_once 'core/core_kos.php';
+=======
+<?
+if ($_SERVER['REQUEST_METHOD']=='POST') {
+    include 'core/core.php';
+>>>>>>> 9a860c582f694fc1ab8780d33003e49fd1514afc
     
     $listForSend=$_POST;
     $check=true;
@@ -36,9 +42,14 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         <table><!--Вывод основной таблицы-->
             <tr><th>n</th><th>x[n]</th><th>f(x[n])</th><th>f'(x[n])</th><th>h</th></tr>
             <?
+<<<<<<< HEAD
             foreach ($params as $item) {
                 echo "<tr><td>{$item['id']}</td><td>{$item['x[n]']}</td><td>{$item['f(x[n])']}</td><td>{$item['f\'(x[n])']}</td><td>{$item['h']}</td></tr>";
             }
+=======
+            foreach ($params as $item)
+                echo "<tr><td>{$item['id']}</td><td>{$item['x[n]']}</td><td>{$item['f(x[n])']}</td><td>{$item['f\'(x[n])']}</td><td>{$item['h']}</td></tr>";
+>>>>>>> 9a860c582f694fc1ab8780d33003e49fd1514afc
             ?>
         </table>
     </div>
@@ -47,9 +58,15 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         <?= $calcSquare ?>
     </div>
 </section>
+<<<<<<< HEAD
 <?php
     }
     else echo ERROR;
+=======
+<?
+    }
+    else echo '<span style="color: red;"><br />О нет, что-то пошло не так<br />Деление на ноль или замыкание<br />Проверьте введённые данные<br />99.9999999% вероятность, что ошибся именно ты<br />Обрати внимание на минусы (должен быть самый маленький)</span><hr />';
+>>>>>>> 9a860c582f694fc1ab8780d33003e49fd1514afc
 }
 ?>
 

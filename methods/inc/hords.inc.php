@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 if ($_SERVER['REQUEST_METHOD']=='POST') {
     include_once 'core/general_core.php';
@@ -7,18 +8,36 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     $check = true;
     foreach ($listForSend as &$item1) {
         $lastItem1 = $item1;
+=======
+<?
+if ($_SERVER['REQUEST_METHOD']=='POST') {
+    include 'core/core.php';
+    
+    $listForSend=$_POST;
+    $check=true;
+    foreach ($listForSend as &$item1) {
+        $lastItem1=$item1;
+>>>>>>> 9a860c582f694fc1ab8780d33003e49fd1514afc
         $item1 = (float) $item1;
         if ($lastItem1!==(string) $item1) {
             $check=false;
             break 1;
         }
     }
+<<<<<<< HEAD
     if (empty($listForSend['coef1'])) $check = false;
+=======
+    if (empty($listForSend['coef1'])) $check=false;
+>>>>>>> 9a860c582f694fc1ab8780d33003e49fd1514afc
     $end = $listForSend['end'];
     
     $result= ($check) ? countUpHords($listForSend) : false;
     if (!empty($result)) {
         list($params, $tabCalc, $listOfH)=$result;
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 9a860c582f694fc1ab8780d33003e49fd1514afc
 ?>
 <section id="calc">
     <div id="calcH"><!--Вывод рассчётов h-->
@@ -40,9 +59,15 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         </table>
     </div>
 </section>
+<<<<<<< HEAD
 <?php
     }
     else echo ERROR;
+=======
+<?
+    }
+    else echo '<span style="color: red;"><br />О нет, что-то пошло не так<br />Деление на ноль или замыкание<br />Проверьте введённые данные<br />99.9999999% вероятность, что ошибся именно ты<br />Обрати внимание на минусы (должен быть самый маленький)</span><hr />';
+>>>>>>> 9a860c582f694fc1ab8780d33003e49fd1514afc
 }
 ?>
 
