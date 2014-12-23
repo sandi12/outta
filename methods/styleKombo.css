@@ -1,0 +1,32 @@
+/*Расчёты(блоки, комбо)*/
+#calcTable1, #tabCalc_line, #tabCalc_deriv_line, #listOfH, #mainTable1, #square {
+    display: inline-block;
+}
+
+#calcTable1 {
+    float: left;
+    clear: left;
+}
+
+#tabCalc_line {
+    margin: 0 0 20px 130px;
+}
+
+#tabCalc_deriv_line {
+    clear: left;
+}
+
+#listOfH {
+    margin: 0 0 40px 100px;
+}
+
+#square {
+    margin-left: 30px;
+}
+
+#mainTable1 {
+    float: left;
+    margin-bottom: 50px;
+}
+
+/*/Расчёты(блоки, комбо)*/
