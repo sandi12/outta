@@ -1,0 +1,61 @@
+
+h1 {
+    margin-left: 320px;
+    font-size: 20px;
+    color: #3F96BE;
+}
+
+.head {
+    font-size: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px groove black;
+    color: #BE7438;
+}
+
+#welcome {
+    width: 1024px;
+    margin: 0 auto;
+    font: 16px/35px Verdana, sans-serif;
+    background-color: white;
+}
+
+/*begin block 'history'*/
+#history {
+    margin: 35px 0;
+}
+#history #textHist {
+    padding: 0 20px;
+}
+/*end block 'history'*/
+
+/*begin block 'examples'*/
+#example {
+    margin: 35px 0;
+}
+#example #img figure {
+    display: inline-block;
+}
+#img figcaption {
+    font: italic 12px/20px Verdana;
+    text-align: center;
+}
+#img #middleFig {
+    margin: 0 60px;
+}
+/*end block 'examples'*/
+
+/*link "Play"*/
+#linkPlay {
+    float: right;
+    font-size: 24px;
+}
+
+#linkPlay:link, #linkPlay:visited {
+	text-decoration: none;
+	color: #2A4F6F;
+	background-color: transparent;
+}
+#linkPlay:hover {
+	color: #778899;
+}
+/*|end*/

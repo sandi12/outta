@@ -1,0 +1,50 @@
+
+<link href="style/field.css" type="text/css" rel="stylesheet"/>
+<script src="core/mainLib.js"></script>
+<div style="display: none" id="styleCell"></div>
+
+<section id="game">
+
+    <div id="menu" >
+        <form name="settings">
+
+            <section id="section_input" >
+                <span style="margin: 0 60px 0 70px;" >&darr;</span><span>&rarr;</span><br />
+                <input name="rows" type="text" value="30" onInput="verify()" style="margin-left: 50px;" /> x <input name="cols" type="text" value="50" onInput="verify()" />
+                <button name="but_create" type="button" onClick="createSpaceForInput()" style="margin-left: 20px;"  >Accept</button><br/>
+                <span id="max">MAX: 60x100</span>
+                <button name="but_rand" type="button" onClick="randomArrangement()" style="margin: 15px 170px 0 0;" >Random</button>
+                <button name="but_go" type="button" onClick="motion()" >Go!</button>
+            </section>
+            <input name="sizeCell" type="range" value="24" min="6" max="42" onMouseMove="styleCell()" style="margin: 20px auto 0; width: 100%;" />
+
+            <section id="section_return" >
+                <button type="button" id="butPause" onClick="pause()" style="margin: 25px 40px 15px 45px;" >Pause</button>
+                <button type="button" id="butForward" onClick="changeGeneration()" style="" >Forward</button><br/>
+                <button type="button" name="but_stop" onClick="stop()" style="margin: 30px 0 0 120px;" >Stop</button>
+            </section>
+
+        </form>
+    </div>
+    
+    <div id="divField">
+        <form name="formField" >
+            <table id="mainField"></table>
+        </form>
+    </div>
+</section>
+
+<script>
+    //below var has link of setInterval
+    var index;
+    
+    var sizeCell;
+    var rows = document.settings.elements.rows.defaultValue;
+    var cols = document.settings.elements.cols.defaultValue;
+    
+    var aliveCells, aliveCellMemory;
+    
+    styleCell();
+    if (verify())
+        createSpaceForInput();
+</script>

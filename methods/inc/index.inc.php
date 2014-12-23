@@ -1,1 +1,0 @@
-<img src="kastrul.jpg" width="500" height="375" style="margin: 50px 0 0 250px;" />
